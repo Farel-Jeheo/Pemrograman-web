@@ -1,0 +1,16 @@
+services:
+  user-service:
+    build: ./user-service
+    ports:
+      - "3001:3000"
+    environment:
+      DATABASE_URL: "postgresql://neondb_owner:npg_OjHra1NiMX5u@ep-jolly-sky-amj7pjru-pooler.c-5.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
+      NODE_ENV: production
+
+  siswa-service:
+    build: ./siswa-service
+    ports:
+      - "3002:3000"
+    environment:
+      DATABASE_URL: "postgresql://neondb_owner:npg_OjHra1NiMX5u@ep-jolly-sky-amj7pjru-pooler.c-5.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
+      NODE_ENV: production
